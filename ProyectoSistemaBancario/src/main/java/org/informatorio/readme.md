@@ -2,8 +2,6 @@ TRABAJO PRÁCTICO FINAL N1 JAVA JEDI:
 
 Realizar el siguiente trabajo práctico final, aplicando lo visto de JAVA en clases.
 
-Fecha de entrega : Sábado 25 de noviembre
-
 Título del Proyecto: Sistema Bancario
 
 Descripción del Escenario:
