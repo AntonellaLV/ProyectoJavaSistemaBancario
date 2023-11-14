@@ -6,11 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
+
+    private int id;
     private String nombre;
     private String dirección;
     private List<CuentaBancaria> cuentas;
 
-    public Cliente(String nombre, String dirección) {
+    public Cliente(int id, String nombre, String dirección) {
+        this.id = this.id;
         this.nombre = nombre;
         this.dirección = dirección;
         this.cuentas = new ArrayList<>();
@@ -29,6 +32,8 @@ public class Cliente {
     }
 
     // Getters y Setters
+
+    public int getId() {return (int) id;}
     public String getNombre() {
         return nombre;
     }
@@ -48,4 +53,6 @@ public class Cliente {
     public CuentaBancaria[] getCuentas() {
         return new CuentaBancaria[0];
     }
+
+
 }

@@ -6,7 +6,7 @@ import org.informatorio.CuentaBancaria.CuentaBancaria;
 public class CuentaCorriente extends CuentaBancaria {
     private double limiteSobregiro;
 
-    public CuentaCorriente(String numeroCuenta, Cliente titular, double limiteSobregiro) {
+    public CuentaCorriente(String numeroCuenta, Cliente titular, double limiteSobregiro, double sobregiro) {
         super(numeroCuenta, titular);
         this.limiteSobregiro = limiteSobregiro;
     }
