@@ -12,6 +12,7 @@ Pueden agregar o eliminar cuentas y consultar el saldo total de sus cuentas.
 De las cuentas bancarias se tiene la información de número de cuenta, titular y saldo.
 Cada cuenta tiene un número único y un titular.
 También tiene métodos para depositar, retirar y consultar el saldo.
+
 Tenemos dos tipos de cuentas bancarias:
 
 ●	Cuenta de ahorro: Las cuentas de ahorro pagan intereses a una tasa específica.

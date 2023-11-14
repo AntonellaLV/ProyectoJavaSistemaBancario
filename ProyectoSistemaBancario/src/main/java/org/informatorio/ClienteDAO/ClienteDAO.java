@@ -16,7 +16,7 @@ public class ClienteDAO {
         PreparedStatement pstmt = null;
         try {
             conn = ConexionDB.obtenerConexion();
-            conn.setAutoCommit(false); // Desactivar auto-commit para manejar la transacción manualmente
+            conn.setAutoCommit(false);
 
             String sql = "INSERT INTO clientes (nombre, dirección) VALUES (?, ?)";
             pstmt = conn.prepareStatement(sql);
@@ -44,7 +44,7 @@ public class ClienteDAO {
             }
             if (conn != null) {
                 try {
-                    conn.setAutoCommit(true); // Reestablecer auto-commit
+                    conn.setAutoCommit(true);
                     conn.close(); // Asegurarse de cerrar la conexión
                 } catch (SQLException e) {
                     e.printStackTrace();

@@ -8,7 +8,7 @@ import org.informatorio.Cliente.Cliente;
 import org.informatorio.CuentaAhorro.CuentaAhorro;
 import org.informatorio.CuentaBancaria.CuentaBancaria;
 
-public abstract class ArchivoImpl implements Archivo {
+public class ArchivoImpl implements Archivo {
 
     @Override
     public void exportarClientesCSV(String filename, List<Cliente> clientes) {

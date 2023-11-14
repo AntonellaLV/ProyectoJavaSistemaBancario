@@ -13,7 +13,7 @@ public class Cliente {
     private List<CuentaBancaria> cuentas;
 
     public Cliente(int id, String nombre, String dirección) {
-        this.id = this.id;
+        this.id = id;
         this.nombre = nombre;
         this.dirección = dirección;
         this.cuentas = new ArrayList<>();
@@ -50,9 +50,8 @@ public class Cliente {
         this.dirección = direccion;
     }
 
-    public CuentaBancaria[] getCuentas() {
-        return new CuentaBancaria[0];
+    public List<CuentaBancaria> getCuentas() {
+        return cuentas;
     }
-
 
 }
