@@ -18,8 +18,11 @@ El sistema principal es el Banco, el cual contiene una lista de clientes. Los cl
 El sistema debe tener una funcionalidad que permite exportar en un csv las cuentas bancarias del banco. En las columnas del csv se debe ver :
 
 ● Número único del titular
+
 ● Nombre de titular
+
 ● Saldo
+
 ● Tipo
 
 El listado del archivo tiene que estar ordenado por número único del titular y por saldo. Recordar que un usuario (Un número único) puede tener varias cuentas.
@@ -27,6 +30,14 @@ El listado del archivo tiene que estar ordenado por número único del titular y
 Requerimientos:
 
 ● Investigar cómo funcionan las cuentas de ahorro y cuenta corriente, en base a esto realizar la implementación de las funcionalidades del sistema.
+
+● Aplicar los principios de POO en base a lo investigado.
+
+● Realizar una descripción de lo investigado.
+
+● En base a los conocimientos de POO, la investigación realizada, identificar las entidades del sistema y representarlo en un diagrama de clases.
+
+
 ● Aplicar los principios de POO en base a lo investigado.
 ● Realizar una descripción de lo investigado.
 ● En base a los conocimientos de POO, la investigación realizada, identificar las entidades del sistema y representarlo en un diagrama de clases.

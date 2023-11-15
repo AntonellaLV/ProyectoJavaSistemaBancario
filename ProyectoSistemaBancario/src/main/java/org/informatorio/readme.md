@@ -12,6 +12,7 @@ Pueden agregar o eliminar cuentas y consultar el saldo total de sus cuentas.
 De las cuentas bancarias se tiene la información de número de cuenta, titular y saldo.
 Cada cuenta tiene un número único y un titular.
 También tiene métodos para depositar, retirar y consultar el saldo.
+
 Tenemos dos tipos de cuentas bancarias:
 
 ●	Cuenta de ahorro: Las cuentas de ahorro pagan intereses a una tasa específica.
@@ -25,7 +26,7 @@ Los clientes pueden registrarse en el banco.
 El banco ofrece los servicios como son abrir cuentas y gestionar a los clientes.
 
 El sistema debe tener una funcionalidad que permite exportar en un csv las cuentas bancarias del banco.
-En las columnas del csv se debe ver :
+En las columnas del csv se debe ver:
 
 ●	Número único del titular
 
