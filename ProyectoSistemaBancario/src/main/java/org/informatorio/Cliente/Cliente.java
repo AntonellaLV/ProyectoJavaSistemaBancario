@@ -2,12 +2,11 @@ package org.informatorio.Cliente;
 
 import org.informatorio.CuentaBancaria.CuentaBancaria;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import java.util.List;
 
 public class Cliente {
+    private int id;
     private String nombre;
     private String direccion;
     private List<CuentaBancaria> cuentas;
@@ -19,6 +18,12 @@ public class Cliente {
     }
 
     // Getters y setters
+    public int getId() {
+        return 0;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getNombre() {
         return nombre;
     }
@@ -42,4 +47,6 @@ public class Cliente {
     public void setCuentas(List<CuentaBancaria> cuentas) {
         this.cuentas = cuentas;
     }
+
+
 }

@@ -1,5 +1,8 @@
 package org.informatorio.ConexionDB;
 
+import org.informatorio.ClienteDAO.ClienteDAO;
+import org.informatorio.CuentaBancariaDAO.CuentaBancariaDAO;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

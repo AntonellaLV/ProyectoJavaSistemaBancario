@@ -6,12 +6,14 @@ public abstract class CuentaBancaria implements OperacionesBancarias {
     protected String numeroCuenta;
     protected Cliente titular;
     protected double saldo;
+    private String tipo;
 
     // Constructor
     public CuentaBancaria(String numeroCuenta, Cliente titular, double saldo) {
         this.numeroCuenta = numeroCuenta;
         this.titular = titular;
         this.saldo = saldo;
+        this.tipo = null;
     }
 
     // Métodos abstractos
@@ -43,8 +45,14 @@ public abstract class CuentaBancaria implements OperacionesBancarias {
         this.saldo = saldo;
     }
 
+    public String getTipo() { return tipo;}
+
+    public void setTipo (String tipo) {this.tipo = null;}
+
     @Override
     public double consultarSaldo() {
         return this.saldo;
     }
+
+
 }
