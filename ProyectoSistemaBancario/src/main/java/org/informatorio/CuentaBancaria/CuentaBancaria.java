@@ -2,26 +2,23 @@ package org.informatorio.CuentaBancaria;
 
 import org.informatorio.Cliente.Cliente;
 
-public abstract class CuentaBancaria {
-    private String numeroCuenta;
-    private Cliente titular;
+public abstract class CuentaBancaria implements OperacionesBancarias {
+    protected String numeroCuenta;
+    protected Cliente titular;
     protected double saldo;
 
-    public CuentaBancaria(String numeroCuenta, Cliente titular) {
+    // Constructor
+    public CuentaBancaria(String numeroCuenta, Cliente titular, double saldo) {
         this.numeroCuenta = numeroCuenta;
         this.titular = titular;
-        this.saldo = 0.0;
+        this.saldo = saldo;
     }
 
+    // Métodos abstractos
     public abstract void depositar(double monto);
+    public abstract void retirar(double monto);
 
-    public abstract void retirar(double monto) throws Exception;
-
-    public double consultarSaldo() {
-        return saldo;
-    }
-
-    // Getters y Setters
+    // Getters y setters
     public String getNumeroCuenta() {
         return numeroCuenta;
     }
@@ -42,7 +39,12 @@ public abstract class CuentaBancaria {
         return saldo;
     }
 
-    public void setSaldo(double saldo) {
+    protected void setSaldo(double saldo) {
         this.saldo = saldo;
+    }
+
+    @Override
+    public double consultarSaldo() {
+        return this.saldo;
     }
 }

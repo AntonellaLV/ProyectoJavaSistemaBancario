@@ -2,59 +2,43 @@ package org.informatorio.ClienteDAO;
 
 import org.informatorio.Cliente.Cliente;
 import org.informatorio.ConexionDB.ConexionDB;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
 public class ClienteDAO {
 
-    //private List<Cliente> cliente;
-
-    public void insertarCliente(Cliente cliente) {
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        try {
-            conn = ConexionDB.obtenerConexion();
-            conn.setAutoCommit(false);
-
-            String sql = "INSERT INTO clientes (nombre, dirección) VALUES (?, ?)";
-            pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, cliente.getNombre());
-            pstmt.setString(2, cliente.getDirección());
-            pstmt.executeUpdate();
-
-            conn.commit(); // Confirmar la transacción si todo ha salido bien
+    public void agregarCliente(Cliente cliente) {
+        String sql = "INSERT INTO Clientes (Nombre, Direccion) VALUES (?, ?)";
+        try (Connection conexion = ConexionDB.obtenerConexion();
+             PreparedStatement statement = conexion.prepareStatement(sql)) {
+            statement.setString(1, cliente.getNombre());
+            statement.setString(2, cliente.getDireccion());
+            statement.executeUpdate();
         } catch (SQLException e) {
-            if (conn != null) {
-                try {
-                    conn.rollback(); // Revertir la transacción en caso de error
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
-            }
             e.printStackTrace();
-        } finally {
-            if (pstmt != null) {
-                try {
-                    pstmt.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (conn != null) {
-                try {
-                    conn.setAutoCommit(true);
-                    conn.close(); // Asegurarse de cerrar la conexión
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
         }
     }
 
-    public Cliente consultarCliente(int idCliente) {
+    public Cliente buscarClientePorId(int id) {
+        String sql = "SELECT * FROM Clientes WHERE ID = ?";
+        try (Connection conexion = ConexionDB.obtenerConexion();
+             PreparedStatement statement = conexion.prepareStatement(sql)) {
+            statement.setInt(1, id);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                String nombre = resultSet.getString("Nombre");
+                String direccion = resultSet.getString("Direccion");
+                return new Cliente(nombre, direccion);  // Asumiendo que Cliente tiene un constructor adecuado
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return null;
     }
+
+    // Otros métodos CRUD...
 }
 

@@ -6,8 +6,8 @@ import org.informatorio.CuentaBancaria.CuentaBancaria;
 public class CuentaCorriente extends CuentaBancaria {
     private double limiteSobregiro;
 
-    public CuentaCorriente(String numeroCuenta, Cliente titular, double limiteSobregiro, double sobregiro) {
-        super(numeroCuenta, titular);
+    public CuentaCorriente(String numeroCuenta, Cliente titular, double saldo, double limiteSobregiro) {
+        super(numeroCuenta, titular, saldo);
         this.limiteSobregiro = limiteSobregiro;
     }
 
@@ -15,24 +15,28 @@ public class CuentaCorriente extends CuentaBancaria {
     public void depositar(double monto) {
         if (monto > 0) {
             saldo += monto;
+        } else {
+            throw new IllegalArgumentException("El monto a depositar debe ser positivo.");
         }
     }
 
     @Override
-    public void retirar(double monto) throws Exception {
-        if (monto > saldo + limiteSobregiro) {
-            throw new Exception("Límite de sobregiro excedido.");
+    public void retirar(double monto) {
+        if (monto <= saldo + limiteSobregiro) {
+            saldo -= monto;
+        } else {
+            throw new IllegalArgumentException("Límite de sobregiro excedido.");
         }
-        saldo -= monto;
     }
 
-// Getters y Setters
-public double getLimiteSobregiro() {
-    return limiteSobregiro;
-}
+    // Getters y setters
+    public double getLimiteSobregiro() {
+        return limiteSobregiro;
+    }
 
     public void setLimiteSobregiro(double limiteSobregiro) {
         this.limiteSobregiro = limiteSobregiro;
     }
 }
+
 

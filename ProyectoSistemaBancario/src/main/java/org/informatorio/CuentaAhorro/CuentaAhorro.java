@@ -6,8 +6,8 @@ import org.informatorio.CuentaBancaria.CuentaBancaria;
 public class CuentaAhorro extends CuentaBancaria {
     private double tasaInteres;
 
-    public CuentaAhorro(String numeroCuenta, Cliente titular, double tasaInteres) {
-        super(numeroCuenta, titular);
+    public CuentaAhorro(String numeroCuenta, Cliente titular, double saldo, double tasaInteres) {
+        super(numeroCuenta, titular, saldo);
         this.tasaInteres = tasaInteres;
     }
 
@@ -15,22 +15,26 @@ public class CuentaAhorro extends CuentaBancaria {
     public void depositar(double monto) {
         if (monto > 0) {
             saldo += monto;
+        } else {
+            throw new IllegalArgumentException("El monto a depositar debe ser positivo.");
         }
     }
 
     @Override
-    public void retirar(double monto) throws Exception {
-        if (monto > saldo) {
-            throw new Exception("Fondos insuficientes.");
+    public void retirar(double monto) {
+        if (monto <= saldo) {
+            saldo -= monto;
+        } else {
+            throw new IllegalArgumentException("Fondos insuficientes para retirar.");
         }
-        saldo -= monto;
     }
 
-    public void calcularIntereses() {
-        saldo += saldo * tasaInteres / 100;
+    public void agregarIntereses() {
+        double interes = saldo * tasaInteres / 100;
+        saldo += interes;
     }
 
-    // Getters y Setters
+    // Getters y setters
     public double getTasaInteres() {
         return tasaInteres;
     }
