@@ -37,6 +37,10 @@ Requerimientos:
 
 ● En base a los conocimientos de POO, la investigación realizada, identificar las entidades del sistema y representarlo en un diagrama de clases.
 
+
+● Aplicar los principios de POO en base a lo investigado.
+● Realizar una descripción de lo investigado.
+● En base a los conocimientos de POO, la investigación realizada, identificar las entidades del sistema y representarlo en un diagrama de clases.
 ● Implementarlo en java usando como gestor del proyecto a MAVEN.
 
 Plus: ● Crear una base de datos con las tablas de las entidades detectadas, relacionarlas e insertar los datos que se exportan en el csv.
